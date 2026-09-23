@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run RsMetaCheck
-        uses: SoftwareUnderstanding/rsmetacheck-action@0.3.5
+        uses: SoftwareUnderstanding/rsmetacheck-action@0.3.6
         # optional arguments
         with:
           pitfalls_output: "./pitfalls_outputs" 
@@ -49,6 +49,7 @@ jobs:
 | `verbose`           | Include both detected AND undetected pitfalls in the output JSON-LD.   | No       | `false`                   |
 | `config`            | Specify the location of the `rsmetacheck.toml` to define the configuration. RSMetaCheck automatically detects a .rsmetacheck.toml (or rsmetacheck.toml) file at the working directory. | No       | `rsmetacheck.toml`        |
 | `config_profile`    | Specify the profile to use. SHould be defined in the config file | No | |
+| `github_token`      | GitHub personal access token passed to SoMEF to raise API rate limits. Optional. Recommend passing via secrets (e.g. `${{ secrets.GITHUB_TOKEN }}`). | No | |
 
 ### Outputs
 
